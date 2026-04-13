@@ -28,7 +28,10 @@ def log(msg: str) -> None:
 
 
 def http_json(url: str, method: str = "GET", data: dict | None = None, auth: bool = False):
-    headers = {"Content-Type": "application/json"}
+    headers = {
+        "Content-Type": "application/json",
+        "User-Agent": "ARCEventsBot/1.0"
+    }
     if auth:
         headers["Authorization"] = f"Bot {DISCORD_TOKEN}"
 
